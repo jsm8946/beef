@@ -26,7 +26,7 @@ namespace Beef
             }
             catch(BeefException $e)
             {
-                echo "<strong>".get_class($e)."</strong>".$e->getMessage()."\n";
+                echo "<strong>".get_class($e)." </strong>".$e->getMessage()."\n";
             }
         }
     }
