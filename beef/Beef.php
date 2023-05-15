@@ -5,7 +5,7 @@
  */
 
 // Please note Git is required for library usage.
-// Only add new libraries to your code in development phase.
+// Only add new libraries to your code when in development phase.
 namespace Beef
 {
     class BeefException extends \Exception
