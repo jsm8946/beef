@@ -4,8 +4,6 @@
  * @version 1.0
  */
 
-// Please note Git is required for library usage.
-// Only add new libraries to your code when in development phase.
 namespace Beef
 {
     class BeefException extends \Exception
@@ -111,22 +109,7 @@ namespace Beef
     {
         public static function library($name)
         {
-            if(!File::exists("beef/liblist.txt"))
-            {
-                File::createFile("beef/liblist.txt");
-            }
-            $liblist = new File("beef/liblist.txt", File::R);
-            $liblist_content = $liblist->getArray();
-            if(!$liblist_content || !in_array($name, $liblist_content))
-            {
-                if(!is_dir("beef/$name"))
-                {
-                    mkdir("beef/$name");
-                }
-                $cmdname = escapeshellarg("https://github.com/jsm8946/beef/tree/libs/$name.php");
-                exec("git clone $cmdname beef/$name");
-            }
-            require_once("beef/$name/$name.php");
+            require_once("beef/$name.php");
         }
     }
 }
